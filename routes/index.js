@@ -10,14 +10,13 @@ const videosRoutes = require("./videos-routes");
 
 router.use("/auth", authRoutes);
 router.use("/api", adminRoutes);
-router.use("/api ", categoriesRoutes);
-router.use("/api ", commentsRoutes);
-router.use("/api ", profileRoutes);
-router.use("/api ", storiesRoutes);
-router.use("/api ", videosRoutes);
+router.use("/api", categoriesRoutes);
+router.use("/api", commentsRoutes);
+router.use("/api", profileRoutes);
+router.use("/api", storiesRoutes);
+router.use("/api", videosRoutes);
 
-module.exports = router;
-
+module.exports = router
 
 
 
