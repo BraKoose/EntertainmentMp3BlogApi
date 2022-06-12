@@ -17,26 +17,69 @@ const { validationRules: passwordValidationRules,
     validate: passwordValidate } = require("../validations/change-password-validator");
 
 router.post("/login", async (req, res) => {
+    /*
+   #swagger.tags = ['Auth']
+  #swagger.parameters['obj'] ={
+      in: 'body',
+      required: true,
+      scheme:{$ref: '#/definition/LoginModel'}
+  }
+*/
     await login(req.body, res);
 });
 
 router.post("/register", validationRules(), validate, async (req, res) => {
+    /*  #swagger.tags = ['Auth']
+        #swagger.parameters['obj'] = {
+            in: 'body',
+            required: true,
+            schema: { $ref: "#/definition/RegisterModel" }
+    } */
+
     await register(req.body, "user", res);
 });
 
 router.post("/verify", async (req, res) => {
+    /*  #swagger.tags = ['Auth']
+      #swagger.parameters['obj'] = {
+          in: 'body',
+          required: true,
+          schema: { $ref: "#/definitions/VerifyEmailModel" }
+  } */
     await verify(req.body, res);
 });
 
 router.post("/forgotPassword", async (req, res) => {
+    /*  #swagger.tags = ['Auth']
+      #swagger.parameters['obj'] = {
+          in: 'body',
+          required: true,
+          schema: { $ref: "#/definition/ForgotPassWordModel" }
+  } */
     await forgotPassword(req.body, res);
 });
 
 router.post("/resetPassword", async (req, res) => {
+    /*  #swagger.tags = ['Auth']
+       #swagger.parameters['obj'] = {
+           in: 'body',
+           required: true,
+           schema: { $ref: "#/definition/ResetPasswordModel" }
+   } */
+
     await resetPassword(req.body, res);
 });
 
 router.post("/changePassword", ensureAuthenticated, async (req, res) => {
+    /*  #swagger.tags = ['Auth']
+      #swagger.security = [{
+      "Authorization": []
+      }]
+      #swagger.parameters['obj'] = {
+          in: 'body',
+          required: true,
+          schema: { $ref: "#/definitions/ChangePasswordModel" }
+  } */
     await changePassword(req.body, res);
 });
 
