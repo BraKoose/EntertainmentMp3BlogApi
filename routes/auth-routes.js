@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
   #swagger.parameters['obj'] ={
       in: 'body',
       required: true,
-      scheme:{$ref: '#/definition/LoginModel'}
+      scheme:{$ref: '#/definitions/LoginModel'}
   }
 */
     await login(req.body, res);
@@ -33,7 +33,7 @@ router.post("/register", validationRules(), validate, async (req, res) => {
         #swagger.parameters['obj'] = {
             in: 'body',
             required: true,
-            schema: { $ref: "#/definition/RegisterModel" }
+            schema: { $ref: "#/definitions/RegisterModel" }
     } */
 
     await register(req.body, "user", res);
@@ -54,7 +54,7 @@ router.post("/forgotPassword", async (req, res) => {
       #swagger.parameters['obj'] = {
           in: 'body',
           required: true,
-          schema: { $ref: "#/definition/ForgotPassWordModel" }
+          schema: { $ref: "#/definitions/ForgotPassWordModel" }
   } */
     await forgotPassword(req.body, res);
 });
@@ -64,7 +64,7 @@ router.post("/resetPassword", async (req, res) => {
        #swagger.parameters['obj'] = {
            in: 'body',
            required: true,
-           schema: { $ref: "#/definition/ResetPasswordModel" }
+           schema: { $ref: "#/definitions/ResetPasswordModel" }
    } */
 
     await resetPassword(req.body, res);

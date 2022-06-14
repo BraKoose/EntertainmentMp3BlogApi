@@ -43,7 +43,7 @@ const doc = {
         }
 
     },
-    definition: {
+    definitions: {
         LoginModel: {
             $email: "admin@entertainmentmp3.com",
             $password:
