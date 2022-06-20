@@ -14,5 +14,14 @@ In this repo, we develop the REST API with the following features:
 
 ---
 
+
+ To run The app locally:
+ Git clone the repo 
+ Npm install in repo 
+ yarn start-gendoc
+ 
+ or you start without the swagger app 
+ yarn start 
+ 
 #Swaggger Screenshot 
 ![](https://github.com/BraKoose/EntertainmentMp3BlogApi/blob/main/startgendoc.png)
